@@ -8,6 +8,7 @@ export class BootloaderScene extends Scene {
 
   preload() {
     this.load.image("test-square", "./assets/test-square.jpg");
+    this.load.spine("owl-spine", "./assets/owl-pro.json", ["./assets/owl-pro.atlas"], true)
   }
 
   create() {

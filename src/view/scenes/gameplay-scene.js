@@ -1,4 +1,5 @@
 import {TestImage} from "../gameobjects/test-image";
+import {Owl} from "../gameobjects/owl";
 
 export class GameplayScene extends Phaser.Scene {
   init(){
@@ -14,5 +15,13 @@ export class GameplayScene extends Phaser.Scene {
     console.dir(this)
 
     new TestImage(this);
+    const owl = new Owl(this);
+    this.updateables = [owl];
+  }
+
+  update(time, delta) {
+    super.update(time, delta);
+
+    this.updateables.forEach(updateable => updateable.update(time, delta));
   }
 }
